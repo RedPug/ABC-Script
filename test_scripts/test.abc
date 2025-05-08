@@ -1,0 +1,11 @@
+let x=`Ds STR
+    hello, world!
+END`
+
+function foo(bar){
+    console.log(bar);
+}
+
+y=`P Gs`
+
+foo(10);

@@ -1,0 +1,33 @@
+Dfib STR
+    Da N
+    Db Na
+    Dc Na
+    Dloop STR
+        Sc A Ga Gb
+        Sa Gb
+        Sb Gc
+        Sn S Gn Na
+        
+        EVALIF Gn Gloop
+    END
+
+    EVAL Gloop
+    P STR result END
+    P Gb
+END
+
+PUSH Dn Nb
+EVAL Gfib
+POP
+
+PUSH Dn Nc
+EVAL Gfib
+POP
+
+PUSH Dn Nd
+EVAL Gfib
+POP
+
+PUSH Dn Ne
+EVAL Gfib
+POP

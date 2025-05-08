@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS", 
+    "baseUrl": "./src",
+    "paths": {
+      "functions/*": ["functions/*"],
+      "literals/*": ["literals/*"],
+      "structures/*": ["structures/*"],
+      "ComputationStack": ["ComputationStack"]
+    },
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "moduleResolution": "node"
+  }
+}
