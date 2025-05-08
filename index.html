@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Language Runner</title>
+    <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+    <div class="content-container">
+    Enter your ABC code below:
+    <textarea id="codeInput" placeholder="Type here..." spellcheck= "false" class="code-input"></textarea>
+    <button onclick="runCode()">Run Code</button>
+
+    <div class="output-container">
+        Output:
+        <div class="output-content">
+            <pre id="output"></pre>
+        </div>
+    </div>
+    
+    <script type="module" src="/src/index.ts"></script>
+    </div>
+</body>
+</html>

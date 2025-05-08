@@ -1,3 +1,4 @@
+import Interpereter from "Interpereter";
 import Computable from "structures/Computable";
 import Evaluable from "structures/Evaluable";
 import RawValue from "structures/RawValue";
@@ -16,6 +17,7 @@ export default class PrintFunction extends Computable {
         // console.log("PrintFunction called with args:", args);
         for (const arg of args) {
             console.log(arg.evaluate([]).getValue());
+            Interpereter.log(arg.evaluate([]).getValue());
         }
 
         return new RawValue(-1);

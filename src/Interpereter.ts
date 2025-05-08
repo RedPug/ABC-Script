@@ -5,9 +5,17 @@ import VariableStack from "structures/VariableStack";
 
 export default class Interpereter {
 
+    static output: string = "";
+
     constructor() {
+        this.reset();
+    }
+
+    reset(): void {
         VariableStack.instance = new VariableStack();
         VariableStack.instance.push();
+        ComputationStack.instance.elements = [];
+        Interpereter.output = "";
     }
 
     interpret(): string {
@@ -34,6 +42,10 @@ export default class Interpereter {
             completionStack.push(result);
         }
         
-        return "success";
+        return Interpereter.output;
+    }
+
+    static log(value: any): void {
+        Interpereter.output += value + "\n";
     }
 }

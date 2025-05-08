@@ -12,22 +12,16 @@ Dfib STR
     END
 
     EVAL Gloop
-    P STR result END
     P Gb
 END
 
-PUSH Dn Nb
+Dn N
+Dloop STR
+PUSH Dn Gn
 EVAL Gfib
 POP
+Sn A Gn Na
+EVALIF S Nz Gn Gloop
+END
 
-PUSH Dn Nc
-EVAL Gfib
-POP
-
-PUSH Dn Nd
-EVAL Gfib
-POP
-
-PUSH Dn Ne
-EVAL Gfib
-POP
+EVAL Gloop
