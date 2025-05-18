@@ -1,11 +1,9 @@
+import Parser from "Parser";
 import Evaluable from "structures/Evaluable";
 import RawValue from "structures/RawValue";
-import { MatchResult } from "./MatchResult";
 
 export default abstract class Computable implements Evaluable {
-  static matchExpression: RegExp; // Default regex that matches anything
   static precedence: number = 0; // Default precedence
-  static isExpandable: boolean = false; //Whether the expression takes a parameter when defined
   static numParameters: number = 0; // Default number of parameters
 
   match: string[];
@@ -21,7 +19,10 @@ export default abstract class Computable implements Evaluable {
   }
 
   static findMatch(input: string): RegExpExecArray{
-    const match = this.matchExpression.exec(input);
-    return match ?? null;
+    return null;
+  }
+
+  static register() {
+    Parser.addExpression(this);
   }
 }

@@ -3,16 +3,12 @@ import Evaluable from "structures/Evaluable";
 import RawValue from "structures/RawValue";
 
 export default class StringLiteral extends Computable {
-    static precedence: number = 1000; // Highest precedence
-    static isExpandable: boolean = true;
-    static numParameters: number = 0;
+    static precedence: number = 1000001; // Highest precedence
 
     private value: RawValue;
 
     constructor(match: string[]) {
         super(match);
-
-        // console.log("Creating StringLiteral with match:", JSON.stringify(match)); // Debugging line
 
         this.value = new RawValue(match[0]);
     }
@@ -55,5 +51,9 @@ export default class StringLiteral extends Computable {
 
         // If no valid pair is found
         return null;
+    }
+
+    static {
+        super.register();
     }
 }

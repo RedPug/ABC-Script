@@ -1,10 +1,9 @@
-import Computable from "structures/Computable";
 import Evaluable from "structures/Evaluable";
+import Expression from "structures/Expression";
 import RawValue from "structures/RawValue";
 
-export default class SubtractionFunction extends Computable {
-    static matchExpression: RegExp = /S/g;
-    static precedence: number = 1;
+export default class SubtractionFunction extends Expression {
+    static symbol: string = "S";
     static numParameters: number = 2;
 
     constructor(match: string[]) {
@@ -16,5 +15,9 @@ export default class SubtractionFunction extends Computable {
         const b = args[1].evaluate([]).getValue() as number;
 
         return new RawValue(a - b);
+    }
+
+    static {
+        super.register();
     }
 }

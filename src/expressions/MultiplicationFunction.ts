@@ -1,10 +1,9 @@
-import Computable from "structures/Computable";
 import Evaluable from "structures/Evaluable";
+import Expression from "structures/Expression";
 import RawValue from "structures/RawValue";
 
-export default class AdditionFunction extends Computable {
-    static matchExpression: RegExp = /A/g;
-    static precedence: number = 1;
+export default class MultiplicationFunction extends Expression {
+    static symbol: string = "X";
     static numParameters: number = 2;
 
     constructor(match: string[]) {
@@ -16,6 +15,10 @@ export default class AdditionFunction extends Computable {
         const a = args[0].evaluate([]).getValue() as number;
         const b = args[1].evaluate([]).getValue() as number;
 
-        return new RawValue(a + b);
+        return new RawValue(a * b);
+    }
+
+    static{
+        super.register();
     }
 }

@@ -5,25 +5,29 @@ import VariableStack from "structures/VariableStack";
 
 export default class Interpereter {
 
-    static output: string = "";
+    static output: string;
+    static shouldStop: boolean;
 
     constructor() {
-        this.reset();
     }
 
-    reset(): void {
+    static {
+        Interpereter.reset();
+    }
+
+    static reset(): void {
         VariableStack.instance = new VariableStack();
-        VariableStack.instance.push();
         ComputationStack.instance.elements = [];
         Interpereter.output = "";
+        Interpereter.shouldStop = false;
     }
 
-    interpret(): string {
+    static interpret(): string {
         const tree = ComputationStack.instance;
         
         const completionStack = [];
 
-        while (tree.elements.length > 0 ){
+        while (tree.elements.length > 0 && !Interpereter.shouldStop) {
             const element = tree.elements.pop()!;
 
             const args: Evaluable[] = [];
@@ -47,5 +51,12 @@ export default class Interpereter {
 
     static log(value: any): void {
         Interpereter.output += value + "\n";
+    }
+
+    static throwError(message: string): void {
+        Interpereter.output += "Error: " + message + "\n";
+        console.error("Error:", message);
+
+        Interpereter.shouldStop = true;
     }
 }

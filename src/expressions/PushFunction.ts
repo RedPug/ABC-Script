@@ -1,13 +1,10 @@
-import parse from "Parser";
-import Computable from "structures/Computable";
-import ComputationStack from "structures/ComputationStack";
 import Evaluable from "structures/Evaluable";
+import Expression from "structures/Expression";
 import RawValue from "structures/RawValue";
 import VariableStack from "structures/VariableStack";
 
-export default class PushFunction extends Computable {
-    static matchExpression: RegExp = /PUSH/g;
-    static precedence: number = 4;
+export default class PushFunction extends Expression {
+    static symbol: string = "PUSH";
     static numParameters: number = 0;
 
     constructor(match: string[]) {
@@ -15,9 +12,12 @@ export default class PushFunction extends Computable {
     }
 
     evaluate(args: Evaluable[]): RawValue {
-        // parse(args[0].evaluate([]).getValue() as string);
         VariableStack.instance.push();
 
         return new RawValue(-1);
+    }
+
+    static {
+        super.register();
     }
 }
