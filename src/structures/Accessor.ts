@@ -2,9 +2,10 @@ import Parser from "Parser";
 import Computable from "./Computable";
 import Evaluable from "./Evaluable";
 import RawValue from "./RawValue";
+import Expression from "./Expression";
 
-export default abstract class Accessor extends Computable{
-    static symbol: string;
+export default abstract class Accessor extends  Expression{
+    static symbol: string = "";
     static numParameters: number = 0;
 
     constructor(match: string[]) {

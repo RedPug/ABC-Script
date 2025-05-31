@@ -18,7 +18,4 @@ export default class SetVariableFunction extends Accessor {
         return new RawValue(-1);
     }
 
-    static {
-        super.register();
-    }
 }

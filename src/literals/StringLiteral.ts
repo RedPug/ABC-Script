@@ -52,8 +52,4 @@ export default class StringLiteral extends Computable {
         // If no valid pair is found
         return null;
     }
-
-    static {
-        super.register();
-    }
 }

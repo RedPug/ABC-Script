@@ -16,8 +16,4 @@ export default class AdditionFunction extends Expression {
 
         return new RawValue(a + b);
     }
-
-    static{
-        super.register();
-    }
 }

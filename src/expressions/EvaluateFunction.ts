@@ -16,8 +16,4 @@ export default class EvaluateFunction extends Expression {
 
         return new RawValue(-1);
     }
-
-    static {
-        super.register();
-    }
 }

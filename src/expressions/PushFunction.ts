@@ -16,8 +16,4 @@ export default class PushFunction extends Expression {
 
         return new RawValue(-1);
     }
-
-    static {
-        super.register();
-    }
 }

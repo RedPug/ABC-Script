@@ -24,8 +24,4 @@ export default class PushQueueFunction extends Accessor {
 
         return new RawValue(0);
     }
-
-    static {
-        super.register();
-    }
 }

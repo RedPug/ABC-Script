@@ -17,8 +17,4 @@ export default class MultiplicationFunction extends Expression {
 
         return new RawValue(a * b);
     }
-
-    static{
-        super.register();
-    }
 }

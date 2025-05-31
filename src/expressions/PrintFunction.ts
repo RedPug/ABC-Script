@@ -18,8 +18,4 @@ export default class PrintFunction extends Expression {
 
         return new RawValue(-1);
     }
-
-    static {
-        super.register();
-    }
 }

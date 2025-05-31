@@ -36,8 +36,4 @@ export default class NumberLiteral extends Computable {
         const match = regex.exec(input);
         return match ?? null;
     }
-
-    static {
-        super.register();
-    }
 }

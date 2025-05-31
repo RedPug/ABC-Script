@@ -21,8 +21,4 @@ export default class QueueLiteral extends Computable {
         const match = regex.exec(input);
         return match ?? null;
     }
-
-    static {
-        super.register();
-    }
 }

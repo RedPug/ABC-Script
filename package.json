@@ -6,7 +6,8 @@
     "build": "tsc && vite build",
     "start": "node -r tsconfig-paths/register dist/index.js",
     "deploy": "gh-pages -d dist",
-    "dev": "vite"
+    "dev": "vite",
+    "postbuild": "copy public\\CNAME dist\\CNAME"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,7 @@
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
+    "vite-plugin-static-copy": "^3.0.0",
     "vite-tsconfig-paths": "^5.1.4"
   },
   "main": "index.js",

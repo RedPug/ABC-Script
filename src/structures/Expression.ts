@@ -1,8 +1,7 @@
-import Parser from "Parser";
 import Computable from "./Computable";
 
 export default abstract class Expression extends Computable {
-    static symbol: string;
+    static symbol: string = "";
     static numParameters: number = 0;
 
     constructor(match: string[]) {

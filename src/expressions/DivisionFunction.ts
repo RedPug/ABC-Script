@@ -16,8 +16,4 @@ export default class DivisionFunction extends Expression {
 
         return new RawValue(a / b);
     }
-
-    static {
-        super.register();
-    }
 }

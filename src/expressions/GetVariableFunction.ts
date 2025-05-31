@@ -14,8 +14,4 @@ export default class GetVariableFunction extends Accessor {
 
         return new RawValue(value);
     }
-
-    static {
-        super.register();
-    }
 }

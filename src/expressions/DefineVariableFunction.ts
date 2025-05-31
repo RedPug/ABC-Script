@@ -17,8 +17,4 @@ export default class DefineVariableFunction extends Accessor {
 
         return new RawValue(-1);
     }
-
-    static {
-        super.register();
-    }
 }

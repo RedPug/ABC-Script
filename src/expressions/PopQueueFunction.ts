@@ -22,8 +22,4 @@ export default class PopQueueFunction extends Accessor {
 
         return new RawValue(-1);
     }
-
-    static {
-        super.register();
-    }
 }

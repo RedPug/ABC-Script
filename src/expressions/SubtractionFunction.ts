@@ -17,7 +17,4 @@ export default class SubtractionFunction extends Expression {
         return new RawValue(a - b);
     }
 
-    static {
-        super.register();
-    }
 }
